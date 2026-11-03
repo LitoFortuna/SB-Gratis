@@ -10,3 +10,6 @@ Este proyecto está compuesto por un único archivo estático (`index.html`) opt
 - GitHub Pages
 - Vercel / Netlify / Cloudflare Pages
 - Uso local directo en cualquier navegador
+
+---
+Desarrollado y optimizado por [CeroCaos](https://cerocaos.es).
