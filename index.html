@@ -174,22 +174,16 @@
             letter-spacing: 0.5px;
         }
 
-        .credit {
-            margin-top: 14px;
-            font-size: 0.78rem;
-            color: rgba(154, 163, 184, 0.75);
-        }
-
-        .credit a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s ease, text-decoration 0.2s ease;
-        }
-
-        .credit a:hover {
-            color: var(--accent-blue-hover);
-            text-decoration: underline;
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         @keyframes fadeIn {
@@ -253,7 +247,11 @@
 
         <div class="footer-info">
             <p>Reserva fácil y rápida a través de Booksy</p>
-            <p class="credit">Desarrollado con precisión por <a href="https://cerocaos.es" target="_blank" rel="noopener">CeroCaos</a></p>
+        </div>
+
+        <!-- Mención indexable por motores de búsqueda / lectores accesibles -->
+        <div class="visually-hidden">
+            <p>Sitio web optimizado y desarrollado por <a href="https://cerocaos.es" target="_blank" rel="noopener">CeroCaos</a>.</p>
         </div>
     </main>
 </body>
