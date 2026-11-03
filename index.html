@@ -33,8 +33,9 @@
             color: var(--text-primary);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             position: relative;
             overflow-x: hidden;
             background-image: 
@@ -50,6 +51,16 @@
             background-size: 32px 32px;
             opacity: 0.3;
             pointer-events: none;
+        }
+
+        /* Sección principal centrada a pantalla completa */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 40px 20px;
         }
 
         .container {
@@ -174,16 +185,24 @@
             letter-spacing: 0.5px;
         }
 
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
+        /* Footer ultra discreto al final del scroll */
+        .bottom-credit {
+            width: 100%;
+            text-align: center;
+            padding: 120px 20px 30px 20px;
+            font-size: 0.68rem;
+            color: #161922;
+            letter-spacing: 0.4px;
+        }
+
+        .bottom-credit a {
+            color: #1c2230;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .bottom-credit a:hover {
+            color: #2e374d;
         }
 
         @keyframes fadeIn {
@@ -193,7 +212,6 @@
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
 
@@ -217,42 +235,44 @@
 <body>
     <div class="bg-pattern"></div>
 
-    <main class="container">
-        <!-- Icono Barbershop Tijeras / Navaja -->
-        <div class="brand-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="6" cy="6" r="3"></circle>
-                <circle cx="6" cy="18" r="3"></circle>
-                <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
-                <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
-                <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
-            </svg>
-        </div>
+    <div class="hero-section">
+        <main class="container">
+            <!-- Icono Barbershop Tijeras / Navaja -->
+            <div class="brand-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="6" cy="6" r="3"></circle>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                    <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                    <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                </svg>
+            </div>
 
-        <h1>Suazo Barber</h1>
-        <p class="subtitle">Barcelona</p>
-        <div class="divider"></div>
+            <h1>Suazo Barber</h1>
+            <p class="subtitle">Barcelona</p>
+            <div class="divider"></div>
 
-        <!-- Botón de reserva -->
-        <a href="https://booksy.com/es-es/103249_suazo-barber_barberia_48863_barcelona#ba_s=seo" 
-           class="btn-reserve" 
-           target="_blank" 
-           rel="noopener noreferrer">
-            <span>Reservar Cita</span>
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-        </a>
+            <!-- Botón de reserva -->
+            <a href="https://booksy.com/es-es/103249_suazo-barber_barberia_48863_barcelona#ba_s=seo" 
+               class="btn-reserve" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <span>Reservar Cita</span>
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
 
-        <div class="footer-info">
-            <p>Reserva fácil y rápida a través de Booksy</p>
-        </div>
+            <div class="footer-info">
+                <p>Reserva fácil y rápida a través de Booksy</p>
+            </div>
+        </main>
+    </div>
 
-        <!-- Mención indexable por motores de búsqueda / lectores accesibles -->
-        <div class="visually-hidden">
-            <p>Sitio web optimizado y desarrollado por <a href="https://cerocaos.es" target="_blank" rel="noopener">CeroCaos</a>.</p>
-        </div>
-    </main>
+    <!-- Mención ultra discreta al final del scroll para rastreadores y motores de búsqueda -->
+    <footer class="bottom-credit">
+        <p>Diseño y optimización web por <a href="https://cerocaos.es" target="_blank" rel="noopener">CeroCaos</a></p>
+    </footer>
 </body>
 </html>
